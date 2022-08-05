@@ -1,6 +1,7 @@
 package introduction.springintroduction;
 
 import introduction.springintroduction.repository.JdbcMemberRepository;
+import introduction.springintroduction.repository.JdbcTemplateMemberRepository;
 import introduction.springintroduction.repository.MemberRepository;
 import introduction.springintroduction.repository.MemoryMemberRepository;
 import introduction.springintroduction.service.MemberService;
@@ -27,7 +28,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 
-        //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        //return new MemoryMemberRepository(); //데이터베이스 이용안하고 JVM의 메모리 이용
+        //return new JdbcMemberRepository(dataSource); //순수 JDBC이용
+        return new JdbcTemplateMemberRepository(dataSource); //JDBCTemplate이용
     }
 }
