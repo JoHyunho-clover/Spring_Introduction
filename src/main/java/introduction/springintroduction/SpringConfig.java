@@ -1,5 +1,6 @@
 package introduction.springintroduction;
 
+import introduction.springintroduction.aop.TimeTraceAop;
 import introduction.springintroduction.repository.MemberRepository;
 import introduction.springintroduction.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +54,11 @@ public class SpringConfig {
         //return new JdbcMemberRepository(dataSource); //순수 JDBC이용
         //return new JdbcTemplateMemberRepository(dataSource); //JDBCTemplate이용
         //return new JpaMemberRepository(em); //Jpa 사용
+    }*/
+
+    /*
+    @Bean //AOP 빈 등록
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
     }*/
 }
